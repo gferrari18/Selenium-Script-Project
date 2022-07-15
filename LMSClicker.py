@@ -52,20 +52,16 @@ icon.click()
 action = ActionChains(driver)
 
 
-hue = 1
-while hue == 1:
+NeverEndingLoop = 1
+while NeverEndingLoop == 1:
     icon = driver.find_element_by_css_selector("a[href*='javascript:RemoveUserPopup']")
     action.move_to_element(icon).click().perform()
 
-    # action.send_keys(Keys.DOWN).perform()
-    # action.send_keys(Keys.DOWN).perform()
     time.sleep(2)
     icon.click()
-    # # action.send_keys(Keys.UP).perform()
-    # action.send_keys(Keys.UP).perform()
-    # action.send_keys(Keys.UP).perform()
     time.sleep(1)
     trying = 0
+
     while trying == 0:
         trying = 1    
         try:
@@ -76,17 +72,3 @@ while hue == 1:
             trying = 0
         
     time.sleep(2)
-
-
-
-""""
-icon = driver.find_element(By.XPATH, "//a[@title='Return to Admin Home']")
-icon.click()
-
-
-
-iconhard = driver.find_element_by_xpath("//a[contains(@href, 'javascript:RemoveUserPopup')]")
-iconhard.click()
-"""
-
-time.sleep(5) # Let the user actually see something!
